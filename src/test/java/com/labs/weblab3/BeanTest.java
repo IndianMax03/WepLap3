@@ -5,10 +5,13 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 
-import javax.persistence.*;
-import java.util.List;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.openMocks;
 

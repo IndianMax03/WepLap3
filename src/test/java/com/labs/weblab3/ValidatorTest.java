@@ -1,9 +1,9 @@
 package com.labs.weblab3;
 
-import com.labs.weblab3.util.Randomizer;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.labs.weblab3.util.Randomizer;
 
 import static org.junit.Assert.*;
 

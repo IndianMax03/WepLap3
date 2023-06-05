@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="center">
-
+                            <h:commandButton id="submit" value="Проверить" action="#{bean.addEntry(coordinates)}"/>
                         </div>
                         <div class="center" style="margin-bottom: 10px">
                             <h:button value="Вернуться" styleClass="button" outcome="toIndex"/>
@@ -84,7 +84,25 @@
             </div>
         </div>
         <div id="footer" class="main_field">
-
+            <h2 class="center">Таблица результатов</h2>
+            <h:dataTable style="margin-bottom: 10px" styleClass="result_table_points" value="#{bean.entries}" var="coordinate" id="result_table" rules="all">
+                <h:column headerClass="">
+                    <f:facet name="header">X</f:facet>
+                    <h:outputText value="#{coordinate.valueX}"/>
+                </h:column>
+                <h:column headerClass="">
+                    <f:facet name="header">Y</f:facet>
+                    <h:outputText value="#{coordinate.valueY}"/>
+                </h:column>
+                <h:column headerClass="">
+                    <f:facet name="header">R</f:facet>
+                    <h:outputText value="#{coordinate.valueR}"/>
+                </h:column>
+                <h:column headerClass="">
+                    <f:facet name="header">Результат</f:facet>
+                    <h:outputText value="#{coordinate.hitResult}"/>
+                </h:column>
+            </h:dataTable>
         </div>
     </ui:define>
     <ui:define name="scripts">
