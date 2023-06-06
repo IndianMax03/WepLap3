@@ -180,18 +180,24 @@ tasks.register<TestReport>("report") {
     group = project.property("tasksGroup").toString()
     dependsOn(tasks.test)
     //  todo сделать коммит
-    exec {
-        executable = "git"
-        args("status")
-    }
-    exec {
-        executable = "echo"
-        args("*******************************************")
-    }
-    exec {
-        executable = "git"
-        args("help")
-    }
 }
 
 /* test end */
+
+tasks.register("MORGENSHTERN") {
+    group = project.property("tasksGroup").toString()
+    doLast {
+        ant.withGroovyBuilder {
+            "exec"("executable" to "git", "output" to "out.txt") {
+                "arg" ("value" to "--short")
+                "arg" ("value" to "status")
+            }
+        }
+    }
+}
+
+//tasks.register<Exec>("team") {
+//    group = project.property("tasksGroup").toString()
+//    commandLine("touch someinfo")
+//    finalizedBy(build)
+//}
